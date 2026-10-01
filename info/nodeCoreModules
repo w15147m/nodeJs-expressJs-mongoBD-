@@ -1,0 +1,10 @@
+## Node Core Modules
+* __Fs (fils System)__ :   handles files operations like reading and writing   
+* __https__ Creates Http servers and makes HTTp requests
+* __path__  Launch a SSL Server
+* __paths.os__ Provides operatinf system-reated utitly methods and properties
+* __events__ handles events and event-driven programming 
+* __ceyto__ provides crytographic functionalities like hashing and encryption
+* __url__ Parses and formats URL strinfs
+
+
