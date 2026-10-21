@@ -23,14 +23,11 @@ const pages = ['/' , '/about', '/contact', '/projects', ];
 const pageContent = (res, page, url) => {
    res.setHeader('Content-Type', 'text/html');
    res.write('<html>');
-   // Adding general page reset styles in the head to support the layout
    res.write(`
      <head> 
        <title>Node serve</title> 
      </head>
    `);
-   
-   // Styled body to center content and set a clean font
    res.write(`
      <body style="font-family: system-ui, sans-serif; background-color: #f4f4f7; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; max-width: 400px; width: 100%;">
@@ -39,7 +36,6 @@ const pageContent = (res, page, url) => {
          <div style="display: flex; flex-direction: column; gap: 10px;">
    `);
 
-   // Styled links inside the loop to look like sleek buttons
    pages.forEach(element => {
      if (url !== element) {
         res.write(`
