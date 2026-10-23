@@ -1,11 +1,8 @@
 // first Node js server
-const { log } = require("console");
-const http = require("http");
 const fs = require("fs")
-const port = 3000;
 const pages = ["/", "/about", "/contact", "/projects"];
 
-const server = http.createServer((req, res) => {
+ const reqHandler = (req, res) => {
   res.setHeader("Content-Type", "text/html");
   htmlHead(res);
 
@@ -27,10 +24,8 @@ const server = http.createServer((req, res) => {
    `);
   res.write("</html>");
   res.end();
-});
-server.listen(port, () => {
-  console.log(`server is running on port http://localhost:${port}`);
-});
+};
+
 
 const homePageContent = (res, page, req) => {
   const url = req.url;
@@ -289,3 +284,7 @@ const htmlHead = (res) => {
      </head>
    `);
 };
+
+
+
+module.exports = reqHandler;
