@@ -1,5 +1,7 @@
 // first Node js server
+const { log } = require("console");
 const http = require("http");
+const fs = require("fs")
 const port = 3000;
 const pages = ["/", "/about", "/contact", "/projects"];
 
@@ -70,6 +72,21 @@ const homePageContent = (res, page, req) => {
 
 const submitFormContent = (res, page, req) => {
   const url = req.url;
+  const body = [];
+  var data = {};
+  req.on('data', (chunk) =>{
+    body.push(chunk);
+  });
+  req.on('end', () =>{
+    const  bufferData  = Buffer.concat(body).toString();
+    const searchParams = new URLSearchParams(bufferData) ;
+    data = Object.fromEntries(searchParams)
+    // for (const [key, val] of searchParams.entries()){
+    //   data[key] = val;
+    // }
+    console.log(data);
+    fs.appendFileSync("users.txt", JSON.stringify(data) + "\n");
+  })
   res.write(`
      <body>
        <div class="card">
