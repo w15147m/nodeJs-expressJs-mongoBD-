@@ -15,11 +15,10 @@ const layout = (res, content) => {
 </head>
 <body>
   <div class="card">
-      <h1>Calculator</h1>
-      <br/>
-      <div class="content">
-
-  ${content}
+       <h1>Calculator</h1>
+       <br/>
+       <div class="content">
+       ${content}
     </div>
     </div>
 </body>
