@@ -1,6 +1,6 @@
 const calculator = () => {
   return `
-  <p class="subtitle"> <strong>Enter  numbers and click "=" </strong></p>
+  <p class="subtitle"> <strong>Enter  numbers and click = </strong></p>
 
   <form action="/calculate-result" method="POST" class="calc-form-row">
     <input type="number" placeholder="First number" id="num1" name="num1" required step="any" class="calc-input">
