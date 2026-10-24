@@ -14,7 +14,14 @@ const layout = (res, content) => {
   </style> 
 </head>
 <body>
+  <div class="card">
+      <h1>Calculator</h1>
+      <br/>
+      <div class="content">
+
   ${content}
+    </div>
+    </div>
 </body>
 </html>`);
 };
