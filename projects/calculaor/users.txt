@@ -1,3 +1,8 @@
 {"name":"Victor Lucas","email":"caxasukug@mailinator.com","gander":"female"}{"name":"Hector Sharpe","email":"wobygom@mailinator.com","gander":"female"}{"name":"Eden Baker","email":"defoqyd@mailinator.com","gander":"female"}
 {"name":"Eden Baker","email":"defoqyd@mailinator.com","gander":"female"}
 {"name":"Pamela Gilmore","email":"vuwuliwi@mailinator.com","gander":"male"}
+{"num1":"98","operation":"multiply","num2":"80"}
+{"num1":"33","operation":"divide","num2":"43"}
+{"num1":33,"operation":"divide","num2":43,"result":0.7674418604651163}
+{"num1":53,"operation":"subtract","num2":36,"result":17}
+{"num1":40,"operation":"subtract","num2":8,"result":32}
