@@ -1,13 +1,27 @@
 // first Node js server
-const http = require("http");
+const express = require('express')
 const port = 3000;
-const reqHandler = require("./userForm");
-const server = http.createServer((req, res) => {
-
-    
 
 
-});
-server.listen(port, () => {
-  console.log(`server is running on port http//localhost:${port}`);
+const app = express();
+
+app.use((req, res, next) =>{
+  console.log('====================================');
+  console.log('This is first middleware');
+  console.log('====================================');
+  next();
+})
+
+app.use((req, res, next) =>{
+  console.log('====================================');
+  console.log('This is 2nd middleware');
+  console.log('====================================');
+  res.send('<p> Welcome to Express</p>')
+})
+
+
+
+
+app.listen(port, () => {
+  console.log(`server is running on port http://localhost:${port}`);
 });
