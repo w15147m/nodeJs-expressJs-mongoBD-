@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const layout = require('./src/layout');
 
+const bodyParser = require('body-parser'); 
 const port = 3000;
 const app = express();
 
@@ -85,6 +86,10 @@ app.get('/projects', (req, res) => {
   `, 'Projects');
 });
 
+
+
+
+
 // Contact - show form
 app.get('/contact', (req, res) => {
   layout(res, `
@@ -106,6 +111,8 @@ app.get('/contact', (req, res) => {
     </main>
   `, 'Contact');
 });
+
+app.use(bodyParser.urlencoded());
 
 // Contact - save message to sms.txt
 app.post('/contact', (req, res) => {
@@ -145,7 +152,6 @@ app.post('/contact', (req, res) => {
     `, 'Thank you');
   });
 });
-
 // 404
 app.use((req, res) => {
   res.status(404);
