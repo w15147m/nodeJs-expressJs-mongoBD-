@@ -112,7 +112,6 @@ app.get('/contact', (req, res) => {
   `, 'Contact');
 });
 
-app.use(bodyParser.urlencoded());
 
 // Contact - save message to sms.txt
 app.post('/contact', (req, res) => {
