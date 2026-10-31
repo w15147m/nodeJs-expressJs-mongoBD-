@@ -17,7 +17,6 @@ homeRouter.get("/", (req, res) => {
         <p>A small Node.js + Express server that handles routing, middleware and form data.</p>
       </div>
       <div class="actions">
-        <a class="btn" href="/projects">View projects</a>
         <a class="btn btn-ghost" href="/contact">Get in touch</a>
       </div>
     </main>
