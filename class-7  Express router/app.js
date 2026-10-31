@@ -7,33 +7,13 @@ const layout = require('./src/layout');
 const bodyParser = require('body-parser'); 
 const port = 3000;
 const app = express();
-
+const nav = require('./src/components/nav')
 // parse form data (for the contact form)
 app.use(express.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
-  console.log('====================================');
-  console.log('This is first middleware');
-  console.log('====================================');
-  next();
-});
 
-app.use((req, res, next) => {
-  console.log('====================================');
-  console.log('This is 2nd middleware');
-  console.log('====================================');
-  next(); // pass control on to the routes below
-});
 
-// simple nav shown on every page
-const nav = `
-  <nav class="nav">
-    <a class="nav-link" href="/">Home</a>
-    <a class="nav-link" href="/about">About</a>
-    <a class="nav-link" href="/projects">Projects</a>
-    <a class="nav-link" href="/contact">Contact</a>
-  </nav>
-`;
+
 
 // Home
 app.get('/', (req, res) => {
