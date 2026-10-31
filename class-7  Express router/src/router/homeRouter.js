@@ -1,6 +1,9 @@
 const express = require("express");
 
-const homeRouter = express.router();
+const homeRouter = express.Router();
+
+const nav = require('../components/nav');
+const layout = require("../layout");
 
 homeRouter.get("/", (req, res) => {
   layout(
@@ -22,3 +25,6 @@ homeRouter.get("/", (req, res) => {
     "Home",
   );
 });
+
+
+module.exports = homeRouter;
