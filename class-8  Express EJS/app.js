@@ -2,11 +2,11 @@
 const express = require('express');
 const port = 3000;
 const app = express();
-const homeRouter = require('./src/router/homeRouter')
-const aboutRouter = require('./src/router/aboutRouter')
-const contactRouter = require('./src/router/contactRouter')
-const contactPostRouter = require('./src/router/contactPostRouter')
-const notFoundRouter = require('./src/router/notFoundRouter')
+const homeRouter = require('./router/homeRouter')
+const aboutRouter = require('./router/aboutRouter')
+const contactRouter = require('./router/contactRouter')
+const contactPostRouter = require('./router/contactPostRouter')
+const notFoundRouter = require('./router/notFoundRouter')
 
 
 
