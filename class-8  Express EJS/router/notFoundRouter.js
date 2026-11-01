@@ -1,24 +1,11 @@
 const express = require("express");
+const path = require("path");
+const { rootDir } = require("../utils/pathUtil");
 
 const notFoundRouter = express.Router();
 
-const nav = require('../src/components/nav');
-const layout = require("../src/layout");
-
 notFoundRouter.use((req, res) => {
-  res.status(404);
-  layout(res, `
-    ${nav}
-    <main class="card">
-      <p class="error-code">404</p>
-      <h1>Page not found</h1>
-      <p class="subtitle">The page you are looking for does not exist.</p>
-      <div class="actions">
-        <a class="btn" href="/">Back home</a>
-      </div>
-    </main>
-  `, 'Not found');
+  res.status(404).sendFile(path.join(rootDir, 'views', 'notFound.html'));
 });
-
 
 module.exports = notFoundRouter;
