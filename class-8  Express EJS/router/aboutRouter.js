@@ -2,8 +2,8 @@ const express = require("express");
 
 const aboutRouter = express.Router();
 
-const nav = require('../components/nav');
-const layout = require("../layout");
+const nav = require('../src/components/nav');
+const layout = require("../src/layout");
 
 aboutRouter.get('/about', (req, res) => {
   layout(res, `

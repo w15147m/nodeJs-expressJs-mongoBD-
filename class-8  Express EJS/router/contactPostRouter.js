@@ -4,15 +4,15 @@ const path = require("path");
 
 const contactPostRouter = express.Router();
 
-const nav = require("../components/nav");
-const layout = require("../layout");
+const nav = require("../src/components/nav");
+const layout = require("../src/layout");
 
 // Contact - save message to sms.txt
 contactPostRouter.post("/contact", (req, res) => {
   const { name, message } = req.body;
   const entry = `[${new Date().toLocaleString()}] ${name}: ${message}\n`;
 
-  fs.appendFile(path.join(__dirname, "../../sms.txt"), entry, (err) => {
+  fs.appendFile(path.join(__dirname, "../sms.txt"), entry, (err) => {
     if (err) {
       console.error(err);
       res.status(500);
