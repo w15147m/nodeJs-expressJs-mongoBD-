@@ -1,7 +1,11 @@
 // first Node js server
 const express = require('express');
+const path = require('path');
 const port = 3000;
 const app = express();
+
+// Serve static assets from public folder
+app.use(express.static(path.join(__dirname, 'public')));
 const homeRouter = require('./router/homeRouter')
 const aboutRouter = require('./router/aboutRouter')
 const contactRouter = require('./router/contactRouter')
