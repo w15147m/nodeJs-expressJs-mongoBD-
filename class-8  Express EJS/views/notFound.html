@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Not found</title>
-  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <main class="card">
-    <p class="error-code">404</p>
-    <h1>Page not found</h1>
-    <p class="subtitle">The page you are looking for does not exist.</p>
-    <div class="actions">
-      <a class="btn" href="/">Back home</a>
+<body class="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4 font-sans text-slate-800">
+  <main class="w-full max-w-md bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center">
+    <p class="text-6xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">404</p>
+    <h1 class="text-2xl font-bold text-slate-900 mb-2">Page not found</h1>
+    <p class="text-slate-500 text-sm mb-6">The page you are looking for does not exist.</p>
+    <div class="flex items-center justify-center gap-3">
+      <a class="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-medium text-sm hover:bg-blue-700 transition" href="/">Back home</a>
     </div>
   </main>
 </body>
 </html>
-

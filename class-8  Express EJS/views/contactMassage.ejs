@@ -5,32 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank you</title>
-  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <main class="card">
-    <div class="badge-success">
-      <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.5"
+<body class="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4 font-sans text-slate-800">
+  <main class="w-full max-w-md bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center">
+    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+      <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M20 6 9 17l-5-5" />
       </svg>
     </div>
-    <h1>Thank you!</h1>
-    <p class="subtitle">Your message has been saved.</p>
-    <ul>
-      <% messages.forEach(item=> {
-        %>
-        <li>
-          <%= item.name %> 
-          <%= item.message %> 
-
-        </li>
+    <h1 class="text-2xl font-bold text-slate-900">Thank you!</h1>
+    <p class="text-slate-500 text-sm mt-1 mb-6">Your message has been saved.</p>
+    
+    <% if (messages && messages.length > 0) { %>
+      <div class="space-y-3 my-6 text-left max-h-60 overflow-y-auto pr-1">
+        <% messages.forEach(item => { %>
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+              <span class="font-semibold text-slate-700 text-sm"><%= item.name %></span>
+              <% if (item.timestamp) { %>
+                <span><%= item.timestamp %></span>
+              <% } %>
+            </div>
+            <p class="text-slate-600 text-sm break-words"><%= item.message %></p>
+          </div>
         <% }) %>
-    </ul>
-    <div class="actions">
-      <a class="btn" href="/">Back home</a>
-      <a class="btn btn-ghost" href="/contact">Send another</a>
+      </div>
+    <% } %>
+
+    <div class="flex items-center justify-center gap-3 mt-6">
+      <a class="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-medium text-sm hover:bg-blue-700 transition" href="/">Back home</a>
+      <a class="px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-slate-700 font-medium text-sm hover:bg-slate-50 transition" href="/contact">Send another</a>
     </div>
   </main>
 </body>
