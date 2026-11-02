@@ -42,7 +42,7 @@ contactPostRouter.post("/contact", (req, res) => {
       }
 
       // 5. Send the array of objects straight to your template
-      res.render("contactMassage", { messages: messagesArray });
+      res.render("contactMassage", { title: "Thank you", messages: messagesArray });
     });
   });
 });
