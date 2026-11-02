@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head', { title: 'Thank you' }) %>
-<body class="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4 font-sans text-slate-800">
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/40 text-slate-800 font-sans flex flex-col">
   <%- include('partials/nav') %>
-  <main class="w-full max-w-md bg-white rounded-2xl shadow-sm border border-slate-200 p-8 text-center">
-    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
-      <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M20 6 9 17l-5-5" />
-      </svg>
-    </div>
-    <h1 class="text-2xl font-bold text-slate-900">Thank you!</h1>
-    <p class="text-slate-500 text-sm mt-1 mb-6">Your message has been saved.</p>
-    
-    <% if (messages && messages.length > 0) { %>
-      <div class="space-y-3 my-6 text-left max-h-60 overflow-y-auto pr-1">
-        <% messages.forEach(item => { %>
-          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl">
-            <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-              <span class="font-semibold text-slate-700 text-sm"><%= item.name %></span>
-              <% if (item.timestamp) { %>
-                <span><%= item.timestamp %></span>
-              <% } %>
-            </div>
-            <p class="text-slate-600 text-sm break-words"><%= item.message %></p>
-          </div>
-        <% }) %>
-      </div>
-    <% } %>
 
-    <div class="flex items-center justify-center gap-3 mt-6">
-      <a class="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-medium text-sm hover:bg-blue-700 transition" href="/">Back home</a>
-      <a class="px-5 py-2.5 rounded-lg border border-slate-200 bg-white text-slate-700 font-medium text-sm hover:bg-slate-50 transition" href="/contact">Send another</a>
+  <main class="flex-1 flex items-center justify-center p-6 sm:p-10">
+    <div class="w-full max-w-md bg-white/90 backdrop-blur-xl rounded-2xl border border-slate-200/80 shadow-xl shadow-slate-200/50 p-8 sm:p-10 text-center relative overflow-hidden">
+      <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
+
+      <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center shadow-xs">
+        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-1">Thank you!</h1>
+      <p class="text-slate-500 text-sm mb-6">Your message has been recorded.</p>
+      
+      <% if (typeof messages !== 'undefined' && messages && messages.length > 0) { %>
+        <div class="text-left mb-6">
+          <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Saved Messages (<%= messages.length %>)</p>
+          <div class="space-y-2.5 max-h-60 overflow-y-auto pr-1">
+            <% messages.slice(-5).reverse().forEach(item => { %>
+              <div class="p-3.5 bg-slate-50/90 border border-slate-200/70 rounded-xl hover:border-slate-300 transition">
+                <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                  <span class="font-semibold text-slate-800 text-sm"><%= item.name %></span>
+                  <% if (item.timestamp) { %>
+                    <span class="text-[11px] text-slate-400"><%= item.timestamp %></span>
+                  <% } %>
+                </div>
+                <p class="text-slate-600 text-sm break-words"><%= item.message %></p>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      <% } %>
+
+      <div class="flex items-center justify-center gap-3 pt-2">
+        <a href="/" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm shadow-sm shadow-blue-500/20 transition">Back home</a>
+        <a href="/contact" class="px-5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-medium text-sm transition">Send another</a>
+      </div>
     </div>
   </main>
+
+  <%- include('partials/footer') %>
 </body>
 </html>
