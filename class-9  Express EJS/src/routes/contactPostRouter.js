@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const contactPostRouter = express.Router();
-const filePath = path.join(__dirname, "../sms.json");
+const filePath = path.join(__dirname, '../../public/db/sms.json');
 
 contactPostRouter.post("/contact", (req, res) => {
   const { name, message } = req.body;

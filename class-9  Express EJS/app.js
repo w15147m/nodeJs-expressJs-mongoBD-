@@ -6,16 +6,16 @@ const app = express();
 
 
 app.set('view engine', 'ejs');
-app.set('views', 'views');
+app.set('views', path.join(__dirname, 'src/views'));
 
 // Serve static assets from public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-const homeRouter = require('./router/homeRouter')
-const aboutRouter = require('./router/aboutRouter')
-const contactRouter = require('./router/contactRouter')
-const contactPostRouter = require('./router/contactPostRouter')
-const notFoundRouter = require('./router/notFoundRouter')
+const homeRouter = require('./src/routes/homeRouter')
+const aboutRouter = require('./src/routes/aboutRouter')
+const contactRouter = require('./src/routes/contactRouter')
+const contactPostRouter = require('./src/routes/contactPostRouter')
+const notFoundRouter = require('./src/routes/notFoundRouter')
 
 
 
