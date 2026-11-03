@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const filePath = path.join(__dirname, "../../../public/db/sms.json");
+const filePath = path.join(__dirname, "../../public/db/sms.json");
 
 exports.home = (req, res) => {
   res.render("home", { title: "Home" });
