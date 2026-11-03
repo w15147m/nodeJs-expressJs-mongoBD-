@@ -1,9 +1,8 @@
 const express = require("express");
+const { pageNotFound } = require("../controllers/homeController");
 
 const notFoundRouter = express.Router();
 
-notFoundRouter.use((req, res) => {
-  res.status(404).render("notFound", { title: "Not Found" });
-});
+notFoundRouter.use(pageNotFound);
 
 module.exports = notFoundRouter;
