@@ -1,4 +1,4 @@
-const { addMessage } = require("../utils/fileUtil");
+const HomeModel = require("../models/homeModel");
 
 exports.home = (req, res) => {
   res.render("home", { title: "Home" });
@@ -14,8 +14,9 @@ exports.getContact = (req, res) => {
 
 exports.postContact = (req, res) => {
   const { name, message } = req.body;
+  const newMsg = new HomeModel(name, message);
 
-  addMessage({ name, message }, (err, newEntry, allMessages) => {
+  newMsg.save((err, newEntry, allMessages) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Could not save your message.");
