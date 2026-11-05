@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { title: '404 - Not Found' }) %>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/40 text-slate-800 font-sans flex flex-col">
+  <%- include('partials/nav') %>
+
+  <main class="flex-1 flex items-center justify-center p-6 sm:p-10">
+    <div class="w-full max-w-md bg-white/90 backdrop-blur-xl rounded-2xl border border-slate-200/80 shadow-xl shadow-slate-200/50 p-8 sm:p-10 text-center relative overflow-hidden">
+      <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-rose-500 to-amber-500"></div>
+
+      <p class="text-7xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-1 tracking-tight">404</p>
+      <h1 class="text-2xl font-bold text-slate-900 mb-2">Page not found</h1>
+      <p class="text-slate-500 text-sm mb-6">The page you are looking for doesn't exist or has moved.</p>
+
+      <div class="flex items-center justify-center">
+        <a href="/" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm shadow-sm shadow-blue-500/20 transition">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          <span>Return Home</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
